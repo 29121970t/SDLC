@@ -1,0 +1,28 @@
+@startuml
+title Последовательность успешного расчёта (активная модель)
+actor Пользователь as User
+participant "View\n(GTK)" as View
+participant Controller
+participant "Model\n(Subject)" as Model
+
+User -> View : Нажимает «Ввести данные»
+View -> Controller : open_input_dialog(view)
+Controller -> View : показывает диалог ввода
+User -> View : Вводит значения и нажимает «Рассчитать»
+View -> Controller : submit(строки, view)
+Controller -> Controller : parse_int(), parse_double()
+Controller -> Model : calculate(input)
+Model -> Model : validate(input)\nвычислить Result\nсохранить State
+Model -> View : notify(): update(state)
+View -> View : update(state)\nобновить метки результата
+View --> User : Показывает расчёт
+
+alt Некорректный формат или диапазон
+  Controller -> View : show_error(сообщение)
+  View --> User : Сообщение об ошибке
+  note over Model
+    Последний корректный State
+    не изменяется.
+  end note
+end
+@enduml

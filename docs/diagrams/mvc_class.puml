@@ -1,0 +1,72 @@
+@startuml
+title «Калькулятор тортиков» — диаграмма классов MVC
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+hide empty members
+
+class Input <<data>> {
+  +cigarettes_per_day: int
+  +pack_price: double
+  +tar_mg: double
+  +nicotine_mg: double
+  +smoking_years: int
+  +cake_price: double
+  +orange_price: double
+}
+
+class Result <<data>> {
+  +cigarettes: double
+  +money_spent: double
+  +tar_grams: double
+  +nicotine_grams: double
+  +cakes: double
+  +oranges: double
+}
+
+class State <<data>> {
+  +input: optional<Input>
+  +result: optional<Result>
+}
+
+interface IObserver <<Observer>> {
+  +update(state: State)
+}
+
+abstract class Subject <<Observable>> {
+  -observers_: vector<IObserver*>
+  +attach(observer: IObserver)
+  +detach(observer: IObserver)
+  #notify(state: State)
+}
+
+class Model <<Model>> {
+  -state_: State
+  +state(): State
+  +calculate(input, error): bool
+  -validate(input, error): bool
+}
+
+class Controller <<Controller>> {
+  -model_: Model&
+  +open_input_dialog(view)
+  +submit(fields, view)
+  -parse_int(text, result): bool
+  -parse_double(text, result): bool
+}
+
+class View <<View, GTK>> {
+  -controller_: Controller&
+  +update(state): void
+  +show_error(message)
+  -clear_result()
+}
+
+Model *-- State
+State *-- Input
+State *-- Result
+Model --|> Subject
+View ..|> IObserver
+Subject o-- "0..*" IObserver : notifies >
+Controller --> Model : calculate()
+View --> Controller : user action
+@enduml
