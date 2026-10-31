@@ -1,0 +1,57 @@
+@startuml
+!theme plain
+skinparam defaultFontName "DejaVu Sans"
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+
+title Диаграмма вариантов использования «КиноВектор»
+
+left to right direction
+
+actor "Гость" as Guest
+actor "Зритель" as Viewer
+actor "Модератор" as Moderator
+actor "Администратор\nкаталога" as Admin
+actor "Аналитик" as Analyst
+
+rectangle "Сервис рекомендаций фильмов" {
+  usecase "Просматривать каталог" as UC1
+  usecase "Искать и фильтровать\nфильмы" as UC2
+  usecase "Открывать карточку\nфильма" as UC3
+  usecase "Ставить оценку" as UC4
+  usecase "Писать рецензию" as UC5
+  usecase "Вести историю\nпросмотров" as UC6
+  usecase "Получать персональные\nрекомендации" as UC7
+  usecase "Указывать\nпредпочтения" as UC8
+  usecase "Отправлять жалобу\nна рецензию" as UC9
+  usecase "Модерировать\nрецензии" as UC10
+  usecase "Управлять каталогом\nи импортировать TMDB" as UC11
+  usecase "Выгружать и удалять\nперсональные данные" as UC12
+  usecase "Смотреть аналитику" as UC13
+}
+
+Guest --> UC1
+Guest --> UC2
+Guest --> UC3
+
+Viewer --> UC1
+Viewer --> UC2
+Viewer --> UC3
+Viewer --> UC4
+Viewer --> UC5
+Viewer --> UC6
+Viewer --> UC7
+Viewer --> UC8
+Viewer --> UC9
+Viewer --> UC12
+
+Moderator --> UC10
+Admin --> UC11
+Analyst --> UC13
+
+UC7 ..> UC8 : <<include>>
+UC7 ..> UC6 : <<include>>
+UC7 ..> UC4 : <<include>>
+UC10 ..> UC9 : <<extend>>
+
+@enduml
