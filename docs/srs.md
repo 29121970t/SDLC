@@ -94,6 +94,7 @@
 | Шаблон SRS учебного курса | Методический | `srs/srs-template.md` |
 | SysML v2-модель «КиноВектор» | Проектный | `docs/design/kinovector.sysml` |
 | Макеты интерфейса | Проектный | `docs/design/mockups/` |
+| Сборка графики из модели | Проектный | `docs/design/render.sh` |
 | TMDB API Documentation | Справочный | https://developer.themoviedb.org/docs |
 | Закон Республики Беларусь «О защите персональных данных» | Нормативный | Национальное законодательство |
 
@@ -688,12 +689,17 @@ MVP — 12 недель:
 
 ### Приложение В. Графические артефакты
 
-| Артефакт | Файл |
-|----------|------|
-| SysML v2-модель | `docs/design/kinovector.sysml` |
-| Контекстная диаграмма | `docs/design/diagrams/context.png` |
-| Диаграмма вариантов использования | `docs/design/diagrams/usecase.png` |
-| Мокап «Рекомендации» | `docs/design/mockups/01-recommendations.png` |
-| Мокап «Каталог» | `docs/design/mockups/02-catalog.png` |
-| Мокап «Карточка фильма» | `docs/design/mockups/03-movie-card.png` |
-| Мокап «Профиль и история» | `docs/design/mockups/04-profile.png` |
+Вся графика построена из SysML v2-модели `docs/design/kinovector.sysml`.
+Команда `docs/design/render.sh` перегенерирует все PNG из представлений
+`ContextView`, `UseCaseView`, `RecommendationsView`, `CatalogView`,
+`MovieCardView` и `ProfileView`.
+
+| Артефакт | Представление | Файл |
+|----------|---------------|------|
+| SysML v2-модель | — | `docs/design/kinovector.sysml` |
+| Контекстная диаграмма | `ContextView` | `docs/design/diagrams/context.png` |
+| Диаграмма вариантов использования | `UseCaseView` | `docs/design/diagrams/usecase.png` |
+| Мокап «Рекомендации» | `RecommendationsView` | `docs/design/mockups/01-recommendations.png` |
+| Мокап «Каталог» | `CatalogView` | `docs/design/mockups/02-catalog.png` |
+| Мокап «Карточка фильма» | `MovieCardView` | `docs/design/mockups/03-movie-card.png` |
+| Мокап «Профиль и история» | `ProfileView` | `docs/design/mockups/04-profile.png` |
