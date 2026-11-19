@@ -23,35 +23,36 @@
 ## Структура
 
 ```text
-l4/
-├── docs/
-│   ├── system-requirements.md    # реестр системных требований
-│   ├── change-requests.md        # CR-01…CR-06
-│   ├── project-management.md     # коммуникации, риски, управление изменениями
-│   ├── sdd.md                    # описание дизайна ПО
-│   ├── adr/                      # ADR-001…ADR-007 и индекс
-│   ├── correspondence/           # два раунда переписки, 9 писем
-│   └── plans/                    # первоначальный, изменённый и согласованный планы
-└── report/
-    ├── report.typ                # исходник отчёта по СТП БГУИР (локально)
-    ├── report.pdf                # собранный отчёт (локально, не коммитится)
-    ├── bsuir_typst/              # шаблон СТП БГУИР
-    └── typst/img/                # PNG-диаграммы из SysML v2-модели
+docs/
+├── srs.md                    # спецификация требований ЛР3
+├── system-requirements.md    # реестр системных требований ЛР4
+├── change-requests.md        # CR-01…CR-06
+├── project-management.md     # коммуникации, риски, управление изменениями
+├── sdd.md                    # описание дизайна ПО
+├── adr/                      # ADR-001…ADR-007 и индекс
+├── correspondence/           # два раунда переписки, 9 писем
+├── plans/                    # первоначальный, изменённый и согласованный планы
+├── design/                   # SysML v2-модель и PNG ЛР3
+└── report/                   # отчёт по СТП БГУИР (локально, не коммитится)
+    ├── report.typ
+    ├── report.pdf
+    ├── bsuir_typst/
+    └── typst/img/
 ```
 
 ## Документы
 
-- [Системные требования](docs/system-requirements.md)
-- [Запросы на изменение](docs/change-requests.md)
-- [Управление проектом](docs/project-management.md)
-- [Описание дизайна ПО](docs/sdd.md)
-- [Архитектурные решения](docs/adr/README.md)
-- [Переписка с заказчиком](docs/correspondence/README.md)
-- [Планы итераций](docs/plans/README.md)
+- [Системные требования](system-requirements.md)
+- [Запросы на изменение](change-requests.md)
+- [Управление проектом](project-management.md)
+- [Описание дизайна ПО](sdd.md)
+- [Архитектурные решения](adr/README.md)
+- [Переписка с заказчиком](correspondence/README.md)
+- [Планы итераций](plans/README.md)
 
 ## Графика
 
-В отчёте используются PNG `context.png` и `usecase.png`, построенные из SysML v2-модели лабораторной работы № 3 (`../docs/design/kinovector.sysml`) официальным инструментом. Исходников PlantUML и HTML-диаграмм в работе нет.
+В отчёте используются PNG `context.png` и `usecase.png`, построенные из SysML v2-модели лабораторной работы № 3 (`design/kinovector.sysml`) официальным инструментом. Исходников PlantUML и HTML-диаграмм в работе нет.
 
 ## Статус
 
