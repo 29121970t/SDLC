@@ -36,8 +36,7 @@ docs/
 └── report/                   # отчёт по СТП БГУИР (локально, не коммитится)
     ├── report.typ
     ├── report.pdf
-    ├── bsuir_typst/
-    └── typst/img/
+    └── bsuir_typst/
 ```
 
 ## Документы
@@ -49,10 +48,6 @@ docs/
 - [Архитектурные решения](adr/README.md)
 - [Переписка с заказчиком](correspondence/README.md)
 - [Планы итераций](plans/README.md)
-
-## Графика
-
-В отчёте используются PNG `context.png` и `usecase.png`, построенные из SysML v2-модели лабораторной работы № 3 (`design/kinovector.sysml`) официальным инструментом. Исходников PlantUML и HTML-диаграмм в работе нет.
 
 ## Статус
 
