@@ -24,7 +24,7 @@
 - web-фреймворк: Drogon;
 - база данных: PostgreSQL 16;
 - кэш и сессии: Redis 7;
-- frontend: серверный HTML, HTMX, Bootstrap 5;
+- frontend: Vue.js 3, Bootstrap 5;
 - сборка: CMake;
 - контейнеризация: Docker Compose;
 - внешние данные: TMDB API с кэшированием и fallback;

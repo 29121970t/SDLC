@@ -215,7 +215,7 @@
 
 | ID | Требование | Категория | Приоритет | Труд | Проверка |
 |----|------------|-----------|-----------|------|----------|
-| SYS-NF-12 | C++20, Drogon, PostgreSQL 16, Redis 7, CMake, Docker Compose, серверный HTML + HTMX + Bootstrap 5 | Ограничение | 10 Critical | 0 | I |
+| SYS-NF-12 | C++20, Drogon, PostgreSQL 16, Redis 7, CMake, Docker Compose, Vue.js 3 + Bootstrap 5 | Ограничение | 10 Critical | 0 | I |
 
 Ограничения не добавляют трудозатрат: они определяют выбор решений и проверяются на архитектурном ревью.
 

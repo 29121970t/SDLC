@@ -56,7 +56,7 @@
 | DV | Design View – проектное представление |
 | DTO | Data Transfer Object – объект передачи данных между слоями |
 | HTML | HyperText Markup Language – язык разметки веб-страниц |
-| HTMX | библиотека AJAX-запросов через атрибуты HTML |
+| Vue.js | JavaScript-фреймворк для реактивного пользовательского интерфейса |
 | MVP | Minimum Viable Product – минимальный жизнеспособный продукт |
 | RBAC | Role-Based Access Control – управление доступом по ролям |
 | REST | Representational State Transfer – стиль взаимодействия по HTTP |
@@ -154,7 +154,7 @@
 - **ID**: DV-05-interface
 - **Title**: Внешние и внутренние контракты
 - **Viewpoint**: Интерфейс
-- **Representation**: Внешний интерфейс – REST/JSON по HTTPS: `/api/auth/*`, `/api/movies`, `/api/movies/{id}`, `/api/ratings`, `/api/reviews`, `/api/collections`, `/api/recommendations`, `/api/admin/*`. Браузер использует серверный HTML + HTMX; Bootstrap 5 обеспечивает адаптивность. Интеграции: TMDB `GET /movie/{id}` с таймаутом 3 с и кэшем 24 ч; SMTP для писем; S3 для постеров. Внутренние интерфейсы – C++-интерфейсы репозиториев и сервисов с DTO. Ошибки возвращаются в формате `{ "error": code, "message": text }`.
+- **Representation**: Внешний интерфейс – REST/JSON по HTTPS: `/api/auth/*`, `/api/movies`, `/api/movies/{id}`, `/api/ratings`, `/api/reviews`, `/api/collections`, `/api/recommendations`, `/api/admin/*`. Браузер использует Vue.js 3 и Bootstrap 5, данные получает через REST/JSON. Интеграции: TMDB `GET /movie/{id}` с таймаутом 3 с и кэшем 24 ч; SMTP для писем; S3 для постеров. Внутренние интерфейсы – C++-интерфейсы репозиториев и сервисов с DTO. Ошибки возвращаются в формате `{ "error": code, "message": text }`.
 - **More Information**: SYS-NF-10, SYS-F-17, SYS-F-23, ADR-002, ADR-006, ADR-007. Полный контракт SUPPLEMENT в разделе 5.
 
 ### DV-06. Взаимодействие
@@ -188,7 +188,7 @@
 | ID | Решение | Outcome | Ссылка |
 |----|---------|---------|--------|
 | DEC-01 | Базовая архитектура | Модульный монолит на Drogon | `adr/ADR-001.md` |
-| DEC-02 | Подход к UI | Серверный HTML + HTMX + Bootstrap 5 | `adr/ADR-002.md` |
+| DEC-02 | Подход к UI | Vue.js 3 + Bootstrap 5 | `adr/ADR-002.md` |
 | DEC-03 | Хранение данных | PostgreSQL 16 + Redis 7 | `adr/ADR-003.md` |
 | DEC-04 | Первый алгоритм рекомендаций | Гибридный, заменён | `adr/ADR-004.md` |
 | DEC-05 | Действующий алгоритм | Content-based с объяснениями | `adr/ADR-005.md` |

@@ -3,7 +3,7 @@
 | ADR | Заголовок | Статус | Дата |
 |-----|-----------|--------|------|
 | ADR-001 | Модульный монолит как основа MVP | accepted | 2026-11-02 |
-| ADR-002 | Серверный HTML и HTMX вместо SPA | accepted | 2026-11-02 |
+| ADR-002 | Vue.js как frontend-фреймворк | accepted | 2026-11-19 |
 | ADR-003 | PostgreSQL 16 и Redis 7 | accepted | 2026-11-02 |
 | ADR-004 | Гибридный рекомендатель | superseded by ADR-005 | 2026-11-05 |
 | ADR-005 | Content-based рекомендатель с объяснениями | accepted | 2026-11-05 |
